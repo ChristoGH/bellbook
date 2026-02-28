@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    /* Prevent pull-to-refresh on iOS when content is scrollable */
+    overscroll-behavior-y: none;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    /* Safe area insets for iPhone notch / home bar */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: calc(4rem + env(safe-area-inset-bottom));
+  }
+  .pb-nav {
+    padding-bottom: calc(5rem + env(safe-area-inset-bottom));
+  }
+}
