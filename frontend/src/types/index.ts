@@ -74,3 +74,39 @@ export interface TokenResponse {
   refresh_token: string
   token_type: string
 }
+
+// ---------------------------------------------------------------------------
+// Messaging
+// ---------------------------------------------------------------------------
+
+export interface MessageItem {
+  id: string
+  conversation_id: string
+  sender_id: string
+  body: string
+  is_system: boolean
+  created_at: string
+}
+
+export interface Participant {
+  user_id: string
+  first_name: string
+  last_name: string
+  role: Role
+  avatar_url: string | null
+  is_muted: boolean
+  is_blocked: boolean
+}
+
+export interface Conversation {
+  id: string
+  school_id: string
+  subject: string | null
+  learner_id: string | null
+  is_archived: boolean
+  created_at: string
+  updated_at: string
+  participants: Participant[]
+  last_message: MessageItem | null
+  unread_count: number
+}

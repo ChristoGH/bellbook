@@ -13,6 +13,7 @@ const AnnouncementsPage     = lazy(() => import('./routes/announcements/index'))
 const AnnouncementDetail    = lazy(() => import('./routes/announcements/detail'))
 const CreateAnnouncement    = lazy(() => import('./routes/announcements/create'))
 const MessagesPage          = lazy(() => import('./routes/messages/index'))
+const ConversationPage      = lazy(() => import('./routes/messages/conversation'))
 const CalendarPage          = lazy(() => import('./routes/calendar/index'))
 const ProfilePage           = lazy(() => import('./routes/settings/profile'))
 
@@ -49,6 +50,7 @@ export default function App() {
             <Route path="/announcements/create"      element={<CreateAnnouncement />} />
             <Route path="/announcements/:id"         element={<AnnouncementDetail />} />
             <Route path="/messages"                  element={<MessagesPage />} />
+            <Route path="/messages/:id"              element={<ConversationPage />} />
             <Route path="/calendar"                  element={<CalendarPage />} />
             <Route path="/settings"                  element={<ProfilePage />} />
           </Route>

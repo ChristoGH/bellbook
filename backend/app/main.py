@@ -6,6 +6,7 @@ from redis.asyncio import Redis
 from app.api import announcements as announcements_router
 from app.api import auth as auth_router
 from app.api import events as events_router
+from app.api import messaging as messaging_router
 from app.config import settings
 from app.middleware.school_context import SchoolContextMiddleware
 
@@ -28,6 +29,7 @@ app.add_middleware(SchoolContextMiddleware)
 app.include_router(auth_router.router)
 app.include_router(announcements_router.router)
 app.include_router(events_router.router)
+app.include_router(messaging_router.router)
 
 
 @app.get("/api/health")
